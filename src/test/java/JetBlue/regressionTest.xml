@@ -3,7 +3,8 @@
 <suite name="Smoke Suite" parallel="none">
     <test name="Multiple Sites">
         <classes>
-            <class name="JetBlue.jetBlue_Automation_with_XML"/>
+            <class name="JetBlue.Jetblue_verifyFare"/>
+            <class name="JetBlue.jetBlue_OneWayTicket"/>
         </classes>
     </test>
 </suite>

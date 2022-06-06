@@ -1,4 +1,4 @@
-package Day5_050822;
+package Day6_051422.Day5_050822;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
