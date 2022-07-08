@@ -36,10 +36,11 @@ public class Scroll_Morgage {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
         //scroll to pixel 400 o website
-   //     jse.executeScript("scroll(0,1000)");
+        jse.executeScript("scroll(0,1000)");
         // wait a bit for browser for scrolling
-       // Thread.sleep(3000);
-
+        Thread.sleep(3000);
+        jse.executeScript("scroll(1000,0)");
+        Thread.sleep(2000);
         //declare a webelement variable  what we want to scroll into
 
         WebElement shareButton = driver.findElement(By.xpath("//*[@id='share_button']"));
@@ -49,8 +50,8 @@ public class Scroll_Morgage {
         Thread.sleep(3000);
 
         // click the button now
-        shareButton.click();
-        Thread.sleep(2000);
+//        shareButton.click();
+//        Thread.sleep(2000);
 
         // scroll back up
         jse.executeScript("scroll(0,-1000)");

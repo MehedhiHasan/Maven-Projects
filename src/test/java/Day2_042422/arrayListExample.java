@@ -17,6 +17,7 @@ public class arrayListExample {
         // printing 4th value of the list
 
         System.out.println("My last country is "+ countries.get(4) + " and my first country " + countries.get(0));
+        System.out.println(countries.size());
 
 
 

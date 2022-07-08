@@ -25,23 +25,4 @@ public class ReusableMethods {
 
 
 
-    public static void chromeOption(){
-
-        //set chrome options arguments
-        ChromeOptions options = new ChromeOptions();
-        //set the condition to incognito mode
-        options.addArguments("incognito");
-        //set the condition to maximise the screen for windows
-//        options.addArguments("start-maximized");
-        // for mac
-          options.addArguments("start-fullscreen");
-        // set your driver as headless(running in background)
-         options.addArguments("headless");
-
-
-    }// end of chromeOption
-
-
-
-
 }//end of java class

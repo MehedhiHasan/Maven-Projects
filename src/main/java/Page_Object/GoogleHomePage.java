@@ -20,13 +20,11 @@ public class GoogleHomePage extends Reusable_Annotation_Class {
         PageFactory.initElements(driver,this);
         this.logger = Reusable_Annotation_Class.logger;
     }// end of constructor class
-
 // define webElements using @find by
     @FindBy(xpath = "//*[@name='q']")
     WebElement searchField;
     @FindBy(xpath ="//*[@name ='btnK']")
     WebElement GoogleSearchButton;
-
     // for multiple elements
     @FindBy(xpath = "//*[@name='links']")
     List<WebElement> listLinks;

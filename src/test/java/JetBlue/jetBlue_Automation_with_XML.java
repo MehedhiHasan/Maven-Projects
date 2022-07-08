@@ -37,10 +37,10 @@ public class jetBlue_Automation_with_XML extends Reusable_Annotation_Class {
         Reusable_Actions_loggers.sendKeysAction(driver, "//*[@id='jb-autocomplete-5-search']", "New York", logger, "Departure area");
         // click on the first result of the search result
         Reusable_Actions_loggers.clickByIndexAction(driver, "//*[@class='in-area']", 0, logger, "first search result");
-        // click on the destination
+        // send on the destination
         Reusable_Actions_loggers.sendKeysAction(driver, "//*[@id='jb-autocomplete-6-search']", "Las Vegas", logger, "Destination");
         // click on the first result of the search result
-        Reusable_Actions_loggers.clickAction(driver, "//li[@id='jb-autocomplete-6-option-item-0']", logger, "first search result");
+        Reusable_Actions_loggers.clickAction(driver, "//li[@id='jb-autocomplete-6-optoptionion-item-0']", logger, "first search result");
         //click on the Explore fares
         Reusable_Actions_loggers.clickAction(driver, "//*[text()=' Explore fares '] ", logger, "Explore fares");
         String fares = Reusable_Actions_loggers.getTextAction(driver, "//*[@id='bff-calendar-2022-5']", logger, "different fares");

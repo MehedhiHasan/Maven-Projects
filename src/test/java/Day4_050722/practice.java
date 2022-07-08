@@ -3,6 +3,7 @@ package Day4_050722;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class practice {
@@ -20,6 +21,13 @@ public class practice {
         String[] result = searchText.split(" ");
         System.out.println(result[0]);
         driver.quit();
+
+
+        WebElement name = driver.findElement(By.xpath("//*[@name='btnK']"));
+        String name2 = name.getText();
+        String[] splitName = name2.split("&");
+        System.out.println("my split result  " + splitName[1]);
+
 
 
     }// end of main

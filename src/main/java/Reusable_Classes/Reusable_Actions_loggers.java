@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.xml.xpath.XPath;
 import java.util.ArrayList;
 
 public class Reusable_Actions_loggers {
@@ -31,7 +32,7 @@ public class Reusable_Actions_loggers {
         //set the condition to incognito mode
         options.addArguments("incognito");
         //set the condition to maximise the screen for windows
-        options.addArguments("start-fullscreen");
+//        options.addArguments("start-fullscreen");
         // options.addArguments("headless");
         //Define WebDriver
         WebDriver driver = new ChromeDriver(options);
@@ -39,15 +40,17 @@ public class Reusable_Actions_loggers {
     }// end of set driver method
 
     // create a mouse hover method
-    public static void mouseHover(WebDriver driver, String xpath, String elementName) {
+    public static void mouseHover(WebDriver driver, String xpath,ExtentTest logger, String elementName) {
         //declare and define explicit wait
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         Actions actions = new Actions(driver);
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             actions.moveToElement(element).perform();
+            logger.log(LogStatus.PASS,"Successfully hover to element" + elementName);
         } catch (Exception e) {
             System.out.println("Unable to click on element " + elementName + " " + e);
+            logger.log(LogStatus.FAIL,"unable to hover to " + elementName+ e);
         }
     }// end of mouse hover
 
@@ -209,31 +212,37 @@ public class Reusable_Actions_loggers {
         try {
             driver.navigate().to(webUrl);
         } catch (Exception e) {
-            System.out.println("Unabel to navigate to new website url " + e);
+            System.out.println("Unable to navigate to new website url " + e);
         }
     }// end of navigation
 
 
     // scroll to new area by pixel
-    public static void scrollByPixel(WebDriver driver, String pixel) {
+    public static void scrollByPixel(WebDriver driver, String pixel, ExtentTest logger) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript(pixel);
+            logger.log(LogStatus.PASS,"Successfully scrolled to " );
         } catch (Exception e) {
             System.out.println(" Unable to scroll " + e);
+            logger.log(LogStatus.FAIL,"Unable to scroll");
         }
     }// end of scrolling by pixel
 
 
     // scroll to new element by locator
-    public static void scrollToElement(WebDriver driver, String xpath) {
+    public static void scrollToElement(WebDriver driver, String xpath,ExtentTest logger, String ElementName) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
+
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("arguments[0].scrollIntoView(true);", xpath);
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            jse.executeScript("arguments[0].scrollIntoView(true);", element);
+            logger.log(LogStatus.PASS,"successfully scroll to element"+ElementName);
         } catch (Exception e) {
             System.out.println(" Unable to scroll to element " + e);
+            logger.log(LogStatus.FAIL,"Unable to scroll to element" + ElementName);
         }
     }// end of scrolling by pixel
 

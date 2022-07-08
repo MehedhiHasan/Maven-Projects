@@ -14,32 +14,26 @@ public class Reusable_Annotation_Class {
     public static WebDriver driver;
     public static ExtentReports reports;
     public static ExtentTest logger;
-
-    //
     @BeforeSuite
     public void SetChromeDriver() {
         driver = Reusable_Actions_loggers.setDriver();
         //define the path to report
-        reports = new ExtentReports("src/main/java/HTML_Reports/Automation.html", true);
+        reports = new ExtentReports("src/main/java/HTML_Reports/jetBlueHTMLReports.html", true);
+        driver.manage().window().maximize();
     }// end of before suit annotation
-
-    //Set Before method to capture test name for each @test.  so it can added to the html reports later
-
+    //Set Before method to capture test name for each @test.  so it can add to the html reports later
     @BeforeMethod
     public void getTestName(Method testName){
         logger = reports.startTest(testName.getName());
     }// end of before method
-
     @AfterMethod
     public void endLogger(){
         reports.endTest(logger);
     }/// end of after method
-
     @AfterSuite
     public void QuitSession() {
         driver.quit();
+        // no information will not be appended.
         reports.flush();
     }// end of after suit
-
-
 }// end of class

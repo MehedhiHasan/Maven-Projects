@@ -73,7 +73,7 @@ public class jetBlue_Automation {
         driver.switchTo().frame(1);
         Reusable_Actions.popUpHandleClick(driver, "//a[text()='Accept All Cookies']", "popup");
         //click on the book button
-        Reusable_Actions_loggers.clickAction(driver, "//*[text()='Boo333k']", logger, "BooK button");
+        Reusable_Actions_loggers.clickAction(driver, "//*[text()='Book']", logger, "BooK button");
         //click on the flight button
         Thread.sleep(2000);
         Reusable_Actions_loggers.clickAction(driver, "//span[text() = 'Flights']", logger, "flight");
@@ -92,7 +92,7 @@ public class jetBlue_Automation {
         //click on destination search results
         Reusable_Actions_loggers.clickByIndexAction(driver, "//*[@class='in-area']", 1, logger, "destination search result");
         // click on check in date
-        Reusable_Actions_loggers.clickAction(driver, "//*[@aria-label='Friday, June 10, 2022']", logger, "check in date");
+        Reusable_Actions_loggers.clickAction(driver, "//*[@aria-label='Thursday, June 30, 2022']", logger, "check in date");
         //click on search flight button
         Reusable_Actions_loggers.clickAction(driver, "//*[text()='Search flights']", logger, "flight search button");
         //click on flight time
@@ -175,9 +175,9 @@ public class jetBlue_Automation {
         //click on the travel info
         Reusable_Actions_loggers.clickAction(driver, "//span[text()='Travel Info']", logger, "Travel info button");
         //click on how to check in button
-        Reusable_Actions_loggers.clickAction(driver, "//*[text()=' How to Check In']", logger, "How to check in");
+        Reusable_Actions_loggers.clickAction(driver, "//a[text()=' Bag Info']", logger, "How to check in");
         // get information about travel
-        String travelInfo = Reusable_Actions_loggers.getTextAction(driver, "//*[@class='mb7-l mb6-m ma0 body']", logger, "Info");
+        String travelInfo = Reusable_Actions_loggers.getTextAction(driver, "//*[@class='nmt5']", logger, "Info");
         System.out.println(travelInfo);
         reports.endTest(logger);
     }// End of best Vacation finder class

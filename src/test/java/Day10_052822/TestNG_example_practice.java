@@ -22,15 +22,11 @@ public class TestNG_example_practice {
         // test case 01: navigate to google and send keys to search field
         @Test(priority = 1)
         public void SearchForKeyword () {
-
-
                 driver.navigate().to("https://www.google.com/");
                 Reusable_Actions.sendKeysAction(driver, "//*[@name ='q']","BMW", "search field");
                 Reusable_Actions.submitAction(driver, "//*[@name='btnK']", "submit search button");
 
         } // end of test 01
-
-
         @Test(priority = 2)
         public void CaptureSearchNumber () {
             // capture search result

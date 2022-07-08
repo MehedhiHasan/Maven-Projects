@@ -1,5 +1,6 @@
 package Day08_0052122;
 
+import Reusable_Classes.Reusable_Actions_POM_Loggers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +31,24 @@ public class getTitleExample {
             System.out.println("Title does not match. Actual title is " + actualTitle);
         }
 
-      //  driver.quit();
+        Reusable_Actions_POM_Loggers.navigateToWeb(driver,"https://www.apple.com");
+        String title = driver.getTitle();
+        System.out.println(title);
+        if(title.equals("Google")){
+            System.out.println("match");
+        }else if(title.contains("Apple")){
+            System.out.println("title match with contain");
+        }else{
+            System.out.println("title did not match");
+        }
+
+
+
+        driver.quit();
+
+
+
+
+//        System.out.println(driver.getTitle().equals("Google"));
     }// end of main
 }

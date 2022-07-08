@@ -11,13 +11,13 @@ public class WhileLoopExample {
         int i = 0;
 
         //define the end point in while loop
-        while(i <houseNumber.length){
+        while(i<houseNumber.length){
             System.out.println("i is now " + i);
             System.out.println("my zip code is " + zipCodes[i] + " house number " + houseNumber[i]);
 
             // incrementing
             i ++;
             // i = i+1;
-        }
+        }// end of while
     }// end of method
 }// end of java class

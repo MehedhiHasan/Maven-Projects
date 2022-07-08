@@ -30,7 +30,7 @@ public class Reusable_Actions {
         //set the condition to incognito mode
         options.addArguments("incognito");
         //set the condition to maximise the screen for windows
-        options.addArguments("start-fullscreen");
+//        options.addArguments("start-fullscreen");
         // options.addArguments("headless");
         //Define WebDriver
         WebDriver driver = new ChromeDriver(options);

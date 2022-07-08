@@ -16,7 +16,6 @@ public class loop_conditions {
 
         for (int i =0; i< fruits.size(); i++){
 
-
 //            if(fruits.get(i) == "Apple"){
 //                System.out.println("My fav fruit is  " + fruits.get(i));
 //            } else if (fruits.get(i) == "Orange"){

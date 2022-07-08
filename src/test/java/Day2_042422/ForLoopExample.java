@@ -13,14 +13,24 @@ public class ForLoopExample {
         cities.add("Manhattan");
         cities.add("Albany");
 
-       for(int i = 0; i < cities.size(); i++){
+//       for(int i = 0; i < cities.size(); i++){
+//
+//           System.out.println("i is now " + i);
+//           System.out.println(" My city is " + cities.get(i));
+//
+//       }// end of for loop
 
-           System.out.println("i is now " + i);
-           System.out.println(" My city is " + cities.get(i));
+        int j = 0;
+        while(j<cities.size()){
+            System.out.println("sd");
+            j++;
+        }
 
-       }// end of for loop
 
         System.out.println(cities.size());
+        System.out.println(cities.get(2));
+
+
 
     }// end of main
 }// end of class

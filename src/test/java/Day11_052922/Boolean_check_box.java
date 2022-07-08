@@ -22,16 +22,16 @@ public class Boolean_check_box {
     }// end of before suit annotation
 
     @Test
-    public void USPS_Tabs_Count(){
+    public void USPS_Tabs_Count() throws InterruptedException {
         //navigae to usps
         driver.navigate().to("https://www.yahoo.com/");
-        WebDriverWait  wait = new WebDriverWait(driver, 10);
-        Reusable_Actions.clickAction(driver,"//*[text() = 'Sign in']","sign in");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Reusable_Actions.clickAction(driver, "//*[text() = 'Sign in']", "sign in");
 //        WebDriverWait  wait = new WebDriverWait(driver, 10);
         // instead of visibiltyOfEleement, use presence of element
         Boolean elementState = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type = 'checkbox']"))).isSelected();
-        System.out.println("Is element checked? "+ elementState);
-
+        System.out.println("Is element checked? " + elementState);
+        Thread.sleep(2000);
     }// end of test
 
     @AfterSuite

@@ -12,8 +12,6 @@ public class Select_MortgageCalc {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-
-
         //set chrome options arguments
         ChromeOptions options = new ChromeOptions();
         //set the condition to incognito mode
@@ -31,14 +29,13 @@ public class Select_MortgageCalc {
         driver.navigate().to("https://www.mortgagecalculator.org");
         Thread.sleep(3000);
 
-        // select start
-
+        // select start month form dropdown
         WebElement startMonth = driver.findElement(By.xpath("//*[@name='param[start_month]']"));
 
         // define select command
-       // Select dropDown = new Select(startMonth);
+        // Select dropDown = new Select(startMonth);
         // select by visible text
-     //   dropDown.selectByVisibleText("Jun");
+        //   dropDown.selectByVisibleText("Jun");
 
 
         // clicking on dropdown and its value if the dropdown tag is not select tag
@@ -52,7 +49,12 @@ public class Select_MortgageCalc {
         // define select command
         Select loanTypeDropdown = new Select(loanType);
         // select by visible text
+        Thread.sleep(2000);
         loanTypeDropdown.selectByVisibleText("USDA");
+        Thread.sleep(2000);
+        loanTypeDropdown.selectByIndex(1);
+        Thread.sleep(2000);
+        loanTypeDropdown.selectByValue("2");
 
     }//end of main
 }// end of java class
